@@ -1,1 +1,18 @@
-<p>eventpage works!</p>
+<div>
+    <mat-card class="card" *ngFor="let data of userData |async">
+      <mat-card-header>
+        <mat-card-title>{{data.name}}</mat-card-title>
+      </mat-card-header>
+      <img mat-card-image src="{{data.imageUrl}}" alt="{{data.name}}">
+      <mat-card-content>
+        {{ data.description }}
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-flat-button color="primary">Tilmeld</button>
+        <button mat-flat-button color="accent">Se mere</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  
+  
+  

@@ -1,0 +1,34 @@
+#tab1{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    gap: 10px;
+}
+
+form{
+    margin: 50px 250px;
+}
+
+mat-form-field{
+    width: 100%;
+}
+
+#tab1 button{
+    width: 200px;
+    height: 45px;
+    font-size: 1.5em;
+}
+
+.tab2{
+    background-color: rgb(251, 229, 212);
+}
+
+.tab3{
+    background-color: rgb(203, 230, 253);
+}
+
+
+mat-card{
+    margin: 15px;
+}

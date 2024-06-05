@@ -26,12 +26,10 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideClientHydration(),
     provideHttpClient(),
-    
-        provideFirebaseApp(() => initializeApp(firebaseConfig)),
-        provideAuth(() => getAuth()),
-        provideFirestore(() => getFirestore()),
-        provideStorage(() => getStorage())
-     ,
+    provideFirebaseApp(() => initializeApp(firebaseConfig)),
+    provideAuth(() => getAuth()),
+    provideFirestore(() => getFirestore()),
+    provideStorage(() => getStorage()),
     provideAnimationsAsync()
   ]
 };

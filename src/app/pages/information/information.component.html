@@ -1,1 +1,19 @@
-<p>information works!</p>
+<div class="content">
+    <h1>Kontakt</h1>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form">
+        <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input matInput type="text" formControlName="email" />
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Navn</mat-label>
+            <input matInput type="text" formControlName="name" />
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Besked</mat-label>
+            <textarea matInput formControlName="message"></textarea>
+        </mat-form-field>
+        <button mat-flat-button color="primary" type="submit" class="send-button">Send</button>
+    </form>
+
+</div>

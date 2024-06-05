@@ -1,1 +1,67 @@
-<p>membership works!</p>
+<div class="container">
+    <div class="row" id="top-section">
+        <div class="col-lg-6">
+            <h1>Bliv medlem af garagen i dag</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, cupiditate ex eos doloribus velit maxime
+                beatae corrupti consectetur eaque nemo quia, illum, adipisci illo esse iure saepe veniam ratione
+                obcaecati error deserunt dicta repellat nam dolorem. Exercitationem, omnis minus. Quam corrupti
+                blanditiis, non unde earum, voluptatem ratione quasi ipsum error omnis pariatur deserunt. Eveniet cumque
+                non fuga aliquid iure reiciendis, quibusdam.</p>
+            <div id="sec-1-buttons">
+                <button mat-flat-button color="accent" routerLink="/hold">Se holdplan her</button>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <img src="/assets/images/IMG_3383.jpeg" alt="Catrine Erichson">
+        </div>
+    </div>
+
+    <div class="row" id="form-section" *ngIf="!isSubmitted">
+        <h1>Meld dig ind i garagen her</h1>
+        <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form">
+          <mat-form-field>
+            <mat-label>Fulde navn</mat-label>
+            <input matInput type="text" formControlName="name" />
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Adresse</mat-label>
+            <input matInput type="text" formControlName="address" />
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Postnummer</mat-label>
+            <input matInput type="text" formControlName="zipcode" />
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>By</mat-label>
+            <input matInput type="text" formControlName="city" />
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input matInput type="text" formControlName="email" />
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Password</mat-label>
+            <input matInput type="password" formControlName="password" />
+          </mat-form-field>
+          <button mat-flat-button color="accent" type="submit">Tilmeld</button>
+        </form>
+      </div>
+      
+      <div class="row" id="welcome-section" *ngIf="isSubmitted">
+        <h1>Velkommen til Garagen, {{submittedName}}!</h1>
+        <p>Gå til din side og tilmeld dig hold ved at trykke på knappen nedenfor!</p>
+        <button mat-flat-button color="primary" routerLink="/profil">Min side</button>
+      </div>
+      
+      <div class="row" id="bottom-section">
+        <div class="col-lg-6">
+          <img src="/assets/images/IMG_4108.jpeg" alt="Catrine Erichson">
+        </div>
+        <div class="col-lg-6">
+          <h1>Bliv en del af fælleskabet</h1>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione natus vero eligendi ducimus deserunt ullam non quae odio delectus officiis! Libero dicta sit cum ipsam iste tenetur ut molestiae! Quisquam maiores dolorum delectus numquam consectetur, vero ullam velit quidem labore vitae quibusdam pariatur cumque obcaecati iusto inventore tempora illo? Alias.</p>
+          <button mat-flat-button color="primary" routerLink="/info">Læs mere</button>
+        </div>
+      </div>      
+
+</div>

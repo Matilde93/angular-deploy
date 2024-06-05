@@ -1,0 +1,55 @@
+#profile-img {
+    width: 60%;
+    height: auto;
+    border-radius: 5px;
+    margin-top: 40px;
+}
+
+#image-container{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+}
+
+#user-info{
+    margin: 15px;
+}
+
+.usertab{
+    display: flex;
+    flex-direction: row;
+}
+
+mat-card{
+    margin: 15px 50px;
+}
+
+.greyed-out {
+    background-color: lightgrey;
+    opacity: 0.6;
+    pointer-events: none;
+  }
+
+.tab1{
+    background-color: rgb(159, 255, 185);
+}
+
+.tab2{
+    background-color: rgb(255, 201, 159);
+}
+
+.content{
+    min-height: calc(100vh - 369px);
+}
+
+#no-activities-message{
+    margin: 20px;
+}
+
+.edit-button{
+    width: 70px;
+    height: 20px;
+    font-size: 0.5em;
+}

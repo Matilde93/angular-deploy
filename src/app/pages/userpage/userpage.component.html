@@ -1,1 +1,129 @@
-<p>userpage works!</p>
+<div class="content">
+    <mat-tab-group>
+      <mat-tab label="Tilmeldte Hold" id="tab1">
+        <ng-container *ngIf="(userActivities | async)?.length; else noActivities">
+          <mat-card *ngFor="let data of userActivities | async" class="tab1">
+            <mat-card-header>
+              <mat-card-title>
+                {{data.name}}
+              </mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              {{ data.date.toDate() | date:'EEE MMM dd yyyy HH:mm:ss' }}
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-button color="warn" (click)="removeFromActivity(data.id)">Afmeld</button>
+            </mat-card-actions>
+          </mat-card>
+        </ng-container>
+        <ng-template #noActivities>
+          <p id="no-activities-message">Ingen tilmeldte hold. Tilmeld dig hold på næste fane.</p>
+        </ng-template>
+      </mat-tab>
+  
+      <mat-tab label="Alle Hold">
+        <mat-card *ngFor="let data of allActivities | async" class="tab2"
+          [ngClass]="{'greyed-out': data.signups.length === data.quantity}">
+          <mat-card-header>
+            <mat-card-title>
+              {{data.name}}
+            </mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            {{ data.date.toDate() | date:'EEE MMM dd yyyy HH:mm:ss' }}
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button color="primary" *ngIf="data.signups.length < data.quantity"
+              (click)="signupForActivity(data.id)">Tilmeld</button>
+            <span *ngIf="data.signups.length === data.quantity">Hold fyldt</span>
+          </mat-card-actions>
+        </mat-card>
+      </mat-tab>
+  
+      <mat-tab label="Dine Oplysninger">
+        <div class="usertab" *ngFor="let data of userData | async">
+          <div id="image-container">
+            <img src="{{data.imageUrl}}" id="profile-img">
+            <input #inputField type="file" hidden (change)="fileSelected(data.id, $event)">
+            <button mat-button color="primary" (click)="inputField.click()">
+              vælg billede
+            </button>
+          </div>
+          <div id="user-info">
+            <h4>Navn
+              <button mat-button color="primary" (click)="editField('name')" class="edit-button">
+                rediger
+              </button>
+            </h4>
+            <p *ngIf="!isEditing.name">{{data.name}}</p>
+            <div *ngIf="isEditing.name">
+              <mat-form-field>
+                <input matInput [(ngModel)]="editableUserData.name" placeholder="{{data.name}}">
+              </mat-form-field>
+              <button mat-icon-button color="primary" (click)="saveField(data.id, 'name')">
+                <mat-icon>check</mat-icon>
+              </button>
+              <button mat-icon-button color="warn" (click)="cancelEdit('name')">
+                <mat-icon>close</mat-icon>
+              </button>
+            </div>
+  
+            <h4>Adresse
+              <button mat-button color="primary" (click)="editField('address')" class="edit-button">
+                rediger
+              </button>
+            </h4>
+            <p *ngIf="!isEditing.address">{{data.address}}</p>
+            <div *ngIf="isEditing.address">
+              <mat-form-field>
+                <input matInput [(ngModel)]="editableUserData.address" placeholder="{{data.address}}">
+              </mat-form-field>
+              <button mat-icon-button color="primary" (click)="saveField(data.id, 'address')">
+                <mat-icon>check</mat-icon>
+              </button>
+              <button mat-icon-button color="warn" (click)="cancelEdit('address')">
+                <mat-icon>close</mat-icon>
+              </button>
+            </div>
+  
+            <h4>By
+              <button mat-button color="primary" (click)="editField('city')" class="edit-button">
+                rediger
+              </button>
+            </h4>
+            <p *ngIf="!isEditing.city">{{data.city}}</p>
+            <div *ngIf="isEditing.city">
+              <mat-form-field>
+                <input matInput [(ngModel)]="editableUserData.city" placeholder="{{data.city}}">
+              </mat-form-field>
+              <button mat-icon-button color="primary" (click)="saveField(data.id, 'city')">
+                <mat-icon>check</mat-icon>
+              </button>
+              <button mat-icon-button color="warn" (click)="cancelEdit('city')">
+                <mat-icon>close</mat-icon>
+              </button>
+            </div>
+  
+            <h4>Postnummer
+              <button mat-button color="primary" (click)="editField('zipcode')" class="edit-button">
+                rediger
+              </button>
+            </h4>
+            <p *ngIf="!isEditing.zipcode">{{data.zipcode}}</p>
+            <div *ngIf="isEditing.zipcode">
+              <mat-form-field>
+                <input matInput [(ngModel)]="editableUserData.zipcode" placeholder="{{data.zipcode}}">
+              </mat-form-field>
+              <button mat-icon-button color="primary" (click)="saveField(data.id, 'zipcode')">
+                <mat-icon>check</mat-icon>
+              </button>
+              <button mat-icon-button color="warn" (click)="cancelEdit('zipcode')">
+                <mat-icon>close</mat-icon>
+              </button>
+            </div>
+          </div>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+  

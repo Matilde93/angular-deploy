@@ -13,7 +13,7 @@ export class AuthService {
   currentUserSig = signal<UserInterface | null | undefined>(undefined);
 
   constructor(private router: Router) {
-    this.user$.subscribe(user => {
+    this.user$.subscribe(() => {
       this.currentUserSig();
     });
   }
