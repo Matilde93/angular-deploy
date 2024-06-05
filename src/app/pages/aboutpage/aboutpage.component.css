@@ -1,0 +1,33 @@
+.content{
+    margin: 20px 300px;
+    line-height: 1.8em;
+}
+
+#sub-title{
+    font-weight: bold;
+}
+
+p{
+    font-size: 1.1em;
+}
+
+h1{
+    text-align: center;
+}
+
+button{
+    width: 300px;
+    height:56px;
+    font-size: 1.5rem;
+}
+
+.actions{
+    display: flex;
+    justify-content: center;
+}
+
+.wrap-image {
+    float: right;
+    margin: 0 0 15px 15px;
+    max-width: 50%;
+}

@@ -6,7 +6,7 @@ import { EventpageComponent } from './pages/eventpage/eventpage.component';
 import { MembershipComponent } from './pages/membership/membership.component';
 import { InformationComponent } from './pages/information/information.component';
 import { UserpageComponent } from './pages/userpage/userpage.component';
-import { AdminGuard, AuthGuard } from './guards/auth/auth.guard';
+import { AdminGuard, AuthGuard } from './guards/auth.guard';
 import { AboutpageComponent } from './pages/aboutpage/aboutpage.component';
 
 export const routes: Routes = [
