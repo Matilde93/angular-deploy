@@ -1,0 +1,25 @@
+<div>
+    <mat-toolbar color="primary" class="toolbar">
+        <mat-toolbar-row id="logo-row">
+            <img src="/assets/images/logo_EG_homepage.png" alt="logo" routerLink="/hjem">
+        </mat-toolbar-row>
+
+        <mat-toolbar-row id="links-row">
+            <button mat-button routerLink="/hold">Hold</button>
+            <button mat-button routerLink="/events">Events</button>
+            <button mat-button routerLink="/kontakt">Kontakt</button>
+            <button mat-button [matMenuTriggerFor]="medlemskaber">Medlemskab</button>
+                <mat-menu #medlemskaber="matMenu" yPosition="below">
+                    <button mat-menu-item routerLink="/medlemskab">Tilmeld</button>
+                    @if (!authService.currentUserSig()){
+                        <button mat-menu-item (click)="openLoginDialog()">Login</button>
+                    }
+
+                    @if (authService.currentUserSig()){
+                        <button mat-menu-item (click)="logOut()" routerLink="/hjem">Logud</button>
+                        <button mat-menu-item routerLink="/profil">Min side</button>
+                    }
+                </mat-menu>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</div>

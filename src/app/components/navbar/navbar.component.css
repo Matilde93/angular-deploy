@@ -1,0 +1,49 @@
+.toolbar{
+    background-color: #201E50;
+}
+
+div{
+    overflow: inherit;
+}
+
+.toolbar mat-toolbar-row{
+    height:fit-content;
+}
+
+#logo-row{
+    justify-content: center;
+    margin: 20px 0;
+}
+
+#links-row{
+    justify-content: center;
+}
+
+button{
+    margin: 0 20px;
+    width: 100px;
+}
+
+img{
+    cursor: pointer;
+    height: 150px;
+    width: auto;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .toolbar{
+        width: 100%;
+    }
+    img {
+        cursor: pointer;
+        height: 120px;
+        width: auto;
+    }
+    #links-row {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        height: fit-content;
+    }    
+}

@@ -1,0 +1,13 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#instagram{
+    margin-right: 15px;
+}
+
+img{
+    margin-bottom: 10px;
+}
