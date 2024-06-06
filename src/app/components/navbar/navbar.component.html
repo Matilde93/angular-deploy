@@ -5,21 +5,20 @@
         </mat-toolbar-row>
 
         <mat-toolbar-row id="links-row">
-            <button mat-button routerLink="/hold">Hold</button>
-            <button mat-button routerLink="/events">Events</button>
-            <button mat-button routerLink="/kontakt">Kontakt</button>
-            <button mat-button [matMenuTriggerFor]="medlemskaber">Medlemskab</button>
-                <mat-menu #medlemskaber="matMenu" yPosition="below">
-                    <button mat-menu-item routerLink="/medlemskab">Tilmeld</button>
-                    @if (!authService.currentUserSig()){
-                        <button mat-menu-item (click)="openLoginDialog()">Login</button>
-                    }
-
-                    @if (authService.currentUserSig()){
-                        <button mat-menu-item (click)="logOut()" routerLink="/hjem">Logud</button>
-                        <button mat-menu-item routerLink="/profil">Min side</button>
-                    }
-                </mat-menu>
+            <a class="link" routerLink="/hold">Hold</a>
+            <a class="link" routerLink="/events">Events</a>
+            <a class="link" routerLink="/kontakt">Kontakt</a>
+            <a class="link" [matMenuTriggerFor]="medlemskaber">Medlemskab</a>
+            <mat-menu #medlemskaber="matMenu" yPosition="below">
+                    <a mat-menu-item routerLink="/medlemskab">Tilmeld</a>
+                @if (!authService.currentUserSig()){
+                    <a mat-menu-item (click)="openLoginDialog()">Login</a>
+                }
+                @if (authService.currentUserSig()){
+                    <a mat-menu-item (click)="logOut()" routerLink="/hjem">Logud</a>
+                    <a mat-menu-item routerLink="/profil">Min side</a>
+                }
+            </mat-menu>
         </mat-toolbar-row>
     </mat-toolbar>
 </div>

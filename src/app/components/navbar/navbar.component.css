@@ -47,3 +47,16 @@ img{
         height: fit-content;
     }    
 }
+
+.link {
+    color: white; /* Change this to your desired color */
+    text-decoration: none; /* Remove underline */
+    padding: 0 1.8em 0.5em 1.8em; /* Optional: add some padding */
+    cursor: pointer; /* Ensure it looks like a clickable link */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 0.8em;
+}
+
+.link:hover {
+    color: lightgray; /* Change this to your desired hover color */
+}
