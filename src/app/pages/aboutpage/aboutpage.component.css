@@ -31,3 +31,12 @@ button{
     margin: 0 0 15px 15px;
     max-width: 50%;
 }
+
+/*MEDIA*/
+
+@media screen and (max-width: 1400px){
+    .content{
+        margin: 10px;
+        line-height: 1.8em;
+    }
+}
