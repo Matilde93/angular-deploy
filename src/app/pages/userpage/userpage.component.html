@@ -42,7 +42,7 @@
   
       <mat-tab label="Dine Oplysninger">
         <div class="usertab" *ngFor="let data of userData | async">
-          <div id="image-container">
+          <div id="image-container" >
             <img src="{{data.imageUrl}}" id="profile-img">
             <input #inputField type="file" hidden (change)="fileSelected(data.id, $event)">
             <button mat-button color="primary" (click)="inputField.click()">
