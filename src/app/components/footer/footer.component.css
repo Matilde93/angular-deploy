@@ -5,9 +5,11 @@
 }
 
 #instagram{
-    margin-right: 15px;
+    margin-right: 25px;
 }
 
 img{
     margin-bottom: 10px;
+    width: 35px;
+    height: auto;
 }
