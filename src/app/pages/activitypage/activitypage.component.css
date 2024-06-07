@@ -57,3 +57,26 @@
     height: 200px;
     line-height: 1.8rem;
 }
+
+
+/*MEDIA*/
+
+@media screen and (max-width: 1000px){
+    .content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .section{
+        width: 90%;
+        margin: 10px;
+    }
+    
+    #prices-container{
+        margin: auto;
+        width: 90%;
+        background-color: rgb(183, 184, 216);
+        padding: 20px;
+    }
+}
