@@ -150,4 +150,16 @@
     font-size: 1.5rem;
     margin: 10px 10px 25px 10px;
   }
+
+  /*MEDIA*/
+
+  @media screen and (max-width: 768px) {
+    mat-form-field {
+      width: 90%;
+      margin: 10px;
+    }
+    #top-section{
+      padding-top: 50px;
+    }
+  }
   
