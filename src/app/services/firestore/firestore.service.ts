@@ -86,7 +86,7 @@ export class FirestoreService {
   }
 
   addMember(name: string, address: string, zipcode: string, city: string, email: string): Observable<string> {
-    const memberToCreate: Member = { name, address, zipcode, city, email, imageUrl: '/assets/images/avatar.jpg' };
+    const memberToCreate: Member = { name, address, zipcode, city, email, imageUrl: '../../../assets/images/avatar.jpg', isAdmin: false};
     const promise = addDoc(this.membersInstance, memberToCreate).then(
       (response) => response.id
     );
