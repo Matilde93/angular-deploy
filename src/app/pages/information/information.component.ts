@@ -22,16 +22,25 @@ export class InformationComponent {
   errorMessage: string | null = null;
 
   async onSubmit() {
-    emailjs.init('-zo-CALBj8VPxXKG_');
-    await emailjs.send("service_wwmx4ai","template_26jkhps",{
-      from_name: this.form.value.name,
-      message: this.form.value.message,
-      reply_to: this.form.value.email,
-      });
-
-      alert('Tak for din besked :)')
-      this.form.reset();
+    if (this.form.valid) {
+      emailjs.init('-zo-CALBj8VPxXKG_');
+      try {
+        await emailjs.send("service_wwmx4ai", "template_26jkhps", {
+          from_name: this.form.value.name,
+          message: this.form.value.message,
+          reply_to: this.form.value.email,
+        });
+        alert('Tak for din besked :)');
+        this.form.reset();
+      } catch (error) {
+        console.error('Email sending failed:', error);
+        alert('Der opstod en fejl ved afsendelse af din besked. Prøv igen senere.');
+      }
+    } else {
+      alert('Udfyld venligst alle felter korrekt :)');
+    }
   }
+  
 
 
 }
