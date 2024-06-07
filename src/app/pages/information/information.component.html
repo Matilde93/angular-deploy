@@ -1,19 +1,30 @@
 <div class="content">
-    <h1>Kontakt</h1>
-    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form">
-        <mat-form-field>
-            <mat-label>Email</mat-label>
-            <input matInput type="text" formControlName="email" />
-        </mat-form-field>
-        <mat-form-field>
-            <mat-label>Navn</mat-label>
-            <input matInput type="text" formControlName="name" />
-        </mat-form-field>
-        <mat-form-field>
-            <mat-label>Besked</mat-label>
-            <textarea matInput formControlName="message"></textarea>
-        </mat-form-field>
-        <button mat-flat-button color="primary" type="submit" class="send-button">Send</button>
-    </form>
 
+    <div>
+        <h1>Kontakt</h1>
+        <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form">
+            <mat-form-field>
+                <mat-label>Email</mat-label>
+                <input matInput type="text" formControlName="email" />
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Navn</mat-label>
+                <input matInput type="text" formControlName="name" />
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Besked</mat-label>
+                <textarea matInput formControlName="message"></textarea>
+            </mat-form-field>
+            <button mat-flat-button color="primary" type="submit" class="send-button">Send</button>
+        </form>
+    </div>
+    <div class="directions">
+        <h3>Find Vej</h3>
+        <p>Du finder garagen her! Det er muligt at parkere på vejen, og hvis du er med offentlig kan man nemt gå fra
+            Kokkedal St. eller tage bussen til Højmosen.</p>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d996.5162751104808!2d12.502896139886913!3d55.895567089067626!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4652484590cebb8b%3A0x6434022004251903!2sRavnevej%2013%2C%202970%20H%C3%B8rsholm!5e0!3m2!1sda!2sdk!4v1717748146937!5m2!1sda!2sdk"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
 </div>
