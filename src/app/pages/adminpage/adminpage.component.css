@@ -32,3 +32,15 @@ mat-form-field{
 mat-card{
     margin: 15px;
 }
+
+
+/*MEDIA*/
+
+@media screen and (max-width: 768px){
+    mat-tab-group{
+        min-height: calc( 100vh - 369px);
+    }
+    form{
+        margin: 15px;
+    }
+}
