@@ -1,4 +1,5 @@
 <mat-tab-group>
+  <!--TAB 1-->
     <mat-tab label="Opret Hold" id="tab1">
       <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form">
         <mat-form-field>
@@ -27,6 +28,8 @@
         <button mat-flat-button color="primary" type="submit">Gem</button>
       </form>
     </mat-tab>
+
+<!--TAB 2-->
     <mat-tab label="Hold" id="tab2">
       <mat-card *ngFor="let data of allActivities | async" class="tab2">
         <mat-card-header>
@@ -35,13 +38,16 @@
           </mat-card-title>
         </mat-card-header>
         <mat-card-content>
-          {{ data.date.toDate() | date:'EEE MMM dd yyyy HH:mm:ss' }}
+          {{ data.date.toDate() | date:'EEE MMM dd yyyy HH:mm:ss' }} <br>
+          {{data.signups.length}}/{{data.quantity}} tilmeldte
         </mat-card-content>
         <mat-card-actions>
-          <button mat-button color="warn" (click)="deleteActivity(data.id)">Slet</button>
+          <button mat-button (click)="deleteActivity(data.id)">Slet</button>
         </mat-card-actions>
       </mat-card>
     </mat-tab>
+
+<!--TAB 3-->
     <mat-tab label="Medlemmer" id="tab3">
       <mat-card *ngFor="let data of allMembers | async" class="tab3">
         <mat-card-header>
@@ -50,7 +56,8 @@
           </mat-card-title>
         </mat-card-header>
         <mat-card-content>
-          {{ data.address }}
+          {{ data.address }}, {{data.zipcode}} {{data.city}} <br>
+          {{data.email}}
         </mat-card-content>
         <mat-card-actions>
           <button mat-button color="warn" (click)="deleteMember(data.id)">Slet</button>
