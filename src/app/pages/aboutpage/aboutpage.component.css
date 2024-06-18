@@ -34,6 +34,14 @@ button{
 
 /*MEDIA*/
 
+@media screen and (max-width: 650px){
+    .wrap-image {
+        float: right;
+        margin: 0 0 15px 15px;
+        max-width: 100%;
+    }
+}
+
 @media screen and (max-width: 1400px){
     .content{
         margin: 10px;
