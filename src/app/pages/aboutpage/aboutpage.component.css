@@ -40,3 +40,12 @@ button{
         line-height: 1.8em;
     }
 }
+
+
+@media screen and (min-width: 1600px){
+    .wrap-image {
+        float: right;
+        margin: 0 0 15px 15px;
+        max-width: 30%;
+    }
+}
