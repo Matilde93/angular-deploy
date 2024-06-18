@@ -3,6 +3,7 @@ div{
     flex-direction: row;
     flex-wrap: wrap;
     justify-content:center;
+    min-height: calc(100vh - 369px);
 }
 
 .card {
