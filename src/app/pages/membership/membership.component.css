@@ -1,169 +1,188 @@
 /* ANIMATIONS */
 
 @keyframes fade-in {
-    from {
-      scale: 0.8;
-      opacity: 0;
-    }
-    to {
-      scale: 1;
-      opacity: 1;
-    }
+  from {
+    scale: 0.8;
+    opacity: 0;
   }
-  
-  @keyframes fade-in-init {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
+  to {
+    scale: 1;
+    opacity: 1;
   }
-  
-  /* GENERAL */
-  
+}
+
+@keyframes fade-in-init {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* GENERAL */
+
+#top-section,
+#form-section,
+#bottom-section {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+#top-section {
+  animation: fade-in-init ease 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+#form-section,
+#welcome-section,
+#bottom-section div {
+  animation: fade-in linear;
+  animation-timeline: view();
+  animation-range: entry;
+}
+
+/* SECTION 1 */
+
+#top-section img {
+  width: 100%;
+  height: auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#top-section h1 {
+  font-size: 4rem;
+  line-height: 5.5rem;
+  font-weight: 700;
+}
+
+#top-section p {
+  font-size: 2rem;
+  line-height: 3rem;
+}
+
+#sec-1-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+
+#top-section button {
+  margin-right: 25px;
+  margin-top: 25px;
+  width: 220px;
+  height: 50px;
+  font-size: 1.2rem;
+}
+
+/* SECTION 3 */
+#bottom-section img {
+  width: 100%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#bottom-section button {
+  margin: 0 25px 25px 25px;
+  width: 220px;
+  height: 50px;
+  font-size: 1.2rem;
+}
+
+#bottom-section h1 {
+  font-size: 4rem;
+  line-height: 5.5rem;
+  font-weight: 700;
+}
+
+#bottom-section p {
+  font-size: 2rem;
+  line-height: 3rem;
+}
+
+/* FORM */
+
+mat-form-field {
+  min-width: 40%;
+  max-width: 90%;
+  margin: 10px;
+}
+
+#form-section h1 {
+  margin: 15px;
+}
+
+#form-section button {
+  min-width: 40%;
+  max-width: 90%;
+  height: 56px;
+  font-size: 1.5rem;
+  margin: 10px 10px 25px 10px;
+}
+
+#form-section {
+  text-align: center;
+  background-color: rgb(96, 130, 151);
+  padding: 15px;
+  color: white;
+}
+
+/* WELCOME SECTION */
+#welcome-section {
+  background-color: rgb(95, 164, 141);
+  padding: 15px;
+  min-height: 250px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#welcome-section h1 {
+  font-size: 3rem;
+  margin: 15px;
+}
+
+#welcome-section button {
+  width: 200px;
+  height: 56px;
+  font-size: 1.5rem;
+  margin: 10px 10px 25px 10px;
+}
+
+/*MEDIA*/
+
+@media screen and (max-width: 1000px) {
+  mat-form-field {
+    width: 90%;
+    margin: 10px;
+  }
+  #top-section {
+    padding-top: 50px;
+  }
+
+  button {
+    margin: 0 0 25px 0;
+  }
+
   #top-section,
   #form-section,
   #bottom-section {
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
-  
-  #top-section {
-    animation: fade-in-init ease 3s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-  }
-  
-  #form-section,
-  #welcome-section,
-  #bottom-section div {
-    animation: fade-in linear;
-    animation-timeline: view();
-    animation-range: entry;
-  }
-  
-  /* SECTION 1 */
-  
-  #top-section img {
-    width: 100%;
-    height: auto;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  }
-  
-  #top-section h1 {
-    font-size: 4rem;
-    line-height: 5.5rem;
-    font-weight: 700;
-  }
-  
-  #top-section p {
-    font-size: 2rem;
-    line-height: 3rem;
-  }
-  
-  #sec-1-buttons {
-    display: flex;
-    justify-content: center;
-    align-items: baseline;
-  }
-  
-  #top-section button {
-    margin-right: 25px;
-    margin-top: 25px;
-    width: 220px;
-    height: 50px;
-    font-size: 1.2rem;
-  }
-  
-  /* SECTION 3 */
-  #bottom-section img {
-    width: 100%;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  }
-  
-  #bottom-section button {
-    margin: 0 25px 25px 25px;
-    width: 220px;
-    height: 50px;
-    font-size: 1.2rem;
-  }
-  
+
+  #top-section h1,
   #bottom-section h1 {
-    font-size: 4rem;
-    line-height: 5.5rem;
+    font-size: 2.5rem;
+    line-height: 2.8rem;
     font-weight: 700;
   }
-  
+
+  #top-section p,
   #bottom-section p {
-    font-size: 2rem;
-    line-height: 3rem;
+    font-size: 1.3rem;
+    line-height: 1.5rem;
   }
-  
-  /* FORM */
-  
-  mat-form-field {
-    min-width: 40%;
-    max-width: 90%;
-    margin: 10px;
-  }
-  
-  #form-section h1 {
-    margin: 15px;
-  }
-  
-  #form-section button {
-    min-width: 40%;
-    max-width: 90%;
-    height: 56px;
-    font-size: 1.5rem;
-    margin: 10px 10px 25px 10px;
-  }
-  
-  #form-section {
-    text-align: center;
-    background-color: rgb(96, 130, 151);
-    padding: 15px;
-    color: white;
-  }
-  
-  /* WELCOME SECTION */
-  #welcome-section {
-    background-color: rgb(95, 164, 141);
-    padding: 15px;
-    min-height: 250px;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-  }
-  
-  #welcome-section h1 {
-    font-size: 3rem;
-    margin: 15px;
-  }
-  
-  #welcome-section button {
-    width: 200px;
-    height: 56px;
-    font-size: 1.5rem;
-    margin: 10px 10px 25px 10px;
-  }
-
-  /*MEDIA*/
-
-  @media screen and (max-width: 768px) {
-    mat-form-field {
-      width: 90%;
-      margin: 10px;
-    }
-    #top-section{
-      padding-top: 50px;
-    }
-
-    button{
-      margin: 0 0 25px 0;
-    }
-  }
-  
+}
