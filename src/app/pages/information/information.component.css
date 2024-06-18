@@ -1,7 +1,7 @@
 .content{
     min-height: calc(100vh - 369px);
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: center;
     justify-content: center;
 }
@@ -45,5 +45,20 @@ iframe{
     form{
         width: 90%;
         margin: 20px;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .content{
+        min-height: calc(100vh - 369px);
+        display: flex;
+        flex-direction: row;
+    }
+    form{
+        width: 90%;
+        margin: 20px;
+    }
+    iframe, p{
+        width: 90%;
     }
 }
