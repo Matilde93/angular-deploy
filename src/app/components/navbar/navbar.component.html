@@ -11,13 +11,42 @@
             <a class="link" routerLink="/ommig">Om mig</a>
             <a class="link" [matMenuTriggerFor]="medlemskaber">Medlemskab</a>
             <mat-menu #medlemskaber="matMenu" yPosition="below">
-                    <a mat-menu-item routerLink="/medlemskab">Tilmeld</a>
+                <a mat-menu-item routerLink="/medlemskab">Tilmeld</a>
                 @if (!authService.currentUserSig()){
-                    <a mat-menu-item (click)="openLoginDialog()">Login</a>
+                <a mat-menu-item (click)="openLoginDialog()">Login</a>
                 }
                 @if (authService.currentUserSig()){
-                    <a mat-menu-item (click)="logOut()" routerLink="/hjem">Logud</a>
-                    <a mat-menu-item routerLink="/profil">Min side</a>
+                <a mat-menu-item (click)="logOut()" routerLink="/hjem">Logud</a>
+                <a mat-menu-item routerLink="/profil">Min side</a>
+                }
+            </mat-menu>
+        </mat-toolbar-row>
+    </mat-toolbar>
+
+
+
+    <mat-toolbar color="primary" class="toolbar-mobile">
+        <mat-toolbar-row id="logo-row">
+            <img src="assets/images/logo_EG_homepage.png" alt="logo" routerLink="/hjem">
+
+            <a class="link" [matMenuTriggerFor]="mobileNav">
+                <mat-icon>menu</mat-icon>
+              </a>
+            <mat-menu #mobileNav="matMenu" yPosition="below">
+                <a mat-menu-item routerLink="/hold">Hold</a>
+                <a mat-menu-item routerLink="/events">Events</a>
+                <a mat-menu-item routerLink="/kontakt">Kontakt</a>
+                <a mat-menu-item routerLink="/ommig">Om mig</a>
+                <a mat-menu-item [matMenuTriggerFor]="medlemskaber">Medlemskab</a>
+            </mat-menu>
+            <mat-menu #medlemskaber="matMenu" yPosition="below">
+                <a mat-menu-item routerLink="/medlemskab">Tilmeld</a>
+                @if (!authService.currentUserSig()){
+                <a mat-menu-item (click)="openLoginDialog()">Login</a>
+                }
+                @if (authService.currentUserSig()){
+                <a mat-menu-item (click)="logOut()" routerLink="/hjem">Logud</a>
+                <a mat-menu-item routerLink="/profil">Min side</a>
                 }
             </mat-menu>
         </mat-toolbar-row>

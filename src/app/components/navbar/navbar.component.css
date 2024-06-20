@@ -1,38 +1,96 @@
-.toolbar{
+.toolbar {
     background-color: #201E50;
 }
 
-div{
+div {
     overflow: inherit;
 }
 
-.toolbar mat-toolbar-row{
-    height:fit-content;
+.toolbar mat-toolbar-row {
+    height: fit-content;
 }
 
-#logo-row{
+#logo-row {
     justify-content: center;
     margin: 20px 0;
 }
 
-#links-row{
+#links-row {
     justify-content: center;
 }
 
-button{
+button {
     margin: 0 20px;
     width: 100px;
 }
 
-img{
+img {
     cursor: pointer;
     height: 150px;
     width: auto;
 }
 
+.link {
+    color: white;
+    text-decoration: none;
+    padding: 0 1.8em 0.5em 1.8em;
+    cursor: pointer;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 0.8em;
+}
+
+.link:hover {
+    color: lightgray;
+}
+
+/* MOBILE TOOLBAR */
+
+.toolbar-mobile {
+    display: none;
+    background-color: #201E50;
+}
+
+.toolbar-mobile mat-toolbar-row {
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.toolbar-mobile img {
+    cursor: pointer;
+    height: 100px;
+    width: auto;
+}
+
+.toolbar-mobile .link {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 0.8em;
+}
+
+.toolbar-mobile .link:hover {
+    color: lightgray;
+}
+
+.toolbar-mobile .spacer {
+    flex: 1;
+}
+
+.toolbar-mobile a.link {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* MEDIA */
 
 @media only screen and (max-width: 600px) {
-    .toolbar{
+    .toolbar {
         width: 100%;
     }
     img {
@@ -48,15 +106,11 @@ img{
     }    
 }
 
-.link {
-    color: white; /* Change this to your desired color */
-    text-decoration: none; /* Remove underline */
-    padding: 0 1.8em 0.5em 1.8em; /* Optional: add some padding */
-    cursor: pointer; /* Ensure it looks like a clickable link */
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 0.8em;
-}
-
-.link:hover {
-    color: lightgray; /* Change this to your desired hover color */
+@media screen and (max-width: 768px) {
+    .toolbar {
+        display: none;
+    }
+    .toolbar-mobile {
+        display: flex;
+    }
 }
